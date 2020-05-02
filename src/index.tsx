@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+import './styles/bootstrap.scss';
+import './styles/main.scss';
+import './styles/plugins/plugins.scss';
+import './styles/plugins/plugins.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
