@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react'
 
 export interface ILayoutContentProps {
     layoutPartName: string;
-    type: ITargetType;
     children: ReactElement;
 }
 

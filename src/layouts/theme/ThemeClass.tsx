@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Consumer } from './ThemeContext';
 
-const ThemeClass = (children: (themeClass: string) => any, color: string, style: string) => {
+export interface IThemeClassProps {
+    children(themeClass: string): ReactElement;
+    color: string;
+    style: string;
+}
+
+const ThemeClass = (props: IThemeClassProps) => {
+    const { children, style, color } = props;
     const layoutThemeClass = `layout--theme--${ style }--${ color }`;
     
     return children(layoutThemeClass);

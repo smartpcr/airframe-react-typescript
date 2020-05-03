@@ -7,13 +7,13 @@ import config from "../Config";
 import { ILayoutContentProps, ITargetType } from "./LayoutContent";
 import ReactDOM from "react-dom";
 import { ThemeClass } from "./theme/ThemeClass";
-import { PageConfigContext } from "./theme/PageConfigContext";
+import { PageConfigContext } from "./PageConfigContext";
 
 const findChildByType = (children: ILayoutContentProps[], targetType: ITargetType) => {
     let result: ReactElement | undefined;
 
     React.Children.forEach(children, (child) => {
-        if (child.type.layoutPartName === targetType.layoutPartName) {
+        if (child.layoutPartName === targetType.layoutPartName) {
             result = child.children;
         }
     });
@@ -22,7 +22,7 @@ const findChildByType = (children: ILayoutContentProps[], targetType: ITargetTyp
 };
 const findChildrenByType = (children: ILayoutContentProps[], targetType: ITargetType) => {
     return _.filter(React.Children.toArray(children), (child: ILayoutContentProps) =>
-        child.type.layoutPartName === targetType.layoutPartName);
+        child.layoutPartName === targetType.layoutPartName);
 };
 
 export interface IBreakpoint {
@@ -208,8 +208,9 @@ class Layout extends React.Component<RouteComponentProps<any> & ILayoutProps, IL
             // Calculate and update style.top of each navbar
             let totalNavbarsHeight = 0;
             navbarElements.forEach((navbarElement: Element) => {
-                const navbarBox = navbarElement.getBoundingClientRect() as any;
-                navbarElement.style.top = `${totalNavbarsHeight}px`;
+                const navbarBox = navbarElement.getBoundingClientRect();
+                // navbarElement.style.top = `${totalNavbarsHeight}px`;
+                navbarElement.setAttribute("style", `top: ${totalNavbarsHeight}px`);
                 totalNavbarsHeight += navbarBox.height;
             });
         }
@@ -251,7 +252,6 @@ class Layout extends React.Component<RouteComponentProps<any> & ILayoutProps, IL
                         this.state.screenSize === 'lg' ||
                         this.state.screenSize === 'xl'
                     ),
-
                     toggleSidebar: this.toggleSidebar.bind(this),
                     setElementsVisibility: this.setElementsVisibility.bind(this),
                     changeMeta: (metaData: ILayoutState) => { this.setState(metaData) }

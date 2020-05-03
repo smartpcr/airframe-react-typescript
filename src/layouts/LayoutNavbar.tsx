@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { ILayoutContentProps } from './LayoutContent';
 
 export interface ILayoutNavbarProps {
-    children: ILayoutContentProps[];
+    children: ReactElement;
     layoutPartName: string;
 }
 

@@ -4,6 +4,7 @@ import {
     Switch,
     Redirect
 } from 'react-router';
+import ProjectsDashboard from './pages/Projects/ProjectsDashboard';
 
 export const RoutedContent = () => {
     return (
