@@ -9,20 +9,20 @@ import ReactDOM from "react-dom";
 import { ThemeClass } from "./theme/ThemeClass";
 import { PageConfigContext } from "./PageConfigContext";
 
-const findChildByType = (children: ReactElement[], targetType: ITargetType) => {
+const findChildByType = (children: ReactElement[], layoutPartName: string) => {
     let result: ReactElement | undefined;
 
     React.Children.forEach(children, (child: ReactElement) => {
-        if (child.props.layoutPartName === targetType.layoutPartName) {
+        if (child && child.props.layoutPartName && child.props.layoutPartName === layoutPartName) {
             result = child;
         }
     });
 
     return result;
 };
-const findChildrenByType = (children: ReactElement[], targetType: ITargetType) => {
+const findChildrenByType = (children: ReactElement[], layoutPartName: string) => {
     return _.filter(React.Children.toArray(children), (child: ReactElement) =>
-        child.props.layoutPartName === targetType.layoutPartName);
+    child && child.props.layoutPartName && child.props.layoutPartName === layoutPartName);
 };
 
 export interface IBreakpoint {
@@ -228,9 +228,9 @@ class Layout extends React.Component<RouteComponentProps<any> & ILayoutProps, IL
 
     render() {
         const { children, favIcons } = this.props;
-        const sidebar = findChildByType(children, {layoutPartName: "sidebar"});
-        const navbars = findChildrenByType(children, {layoutPartName: "navbar"});
-        const content = findChildByType(children, {layoutPartName: "content"});
+        const sidebar = findChildByType(children, "sidebar");
+        const navbars = findChildrenByType(children, "navbar");
+        const content = findChildByType(children, "content");
         const otherChildren = _.differenceBy(
             React.Children.toArray(children),
             [
