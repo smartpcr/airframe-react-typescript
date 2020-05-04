@@ -5,7 +5,7 @@ import { SidebarContent } from './SidebarContent';
 import { OuterClick } from '../OuterClick/OuterClick';
 
 export interface ISidebarProps {
-    children: ReactElement;
+    children: ReactElement[];
     slim: boolean;
     collapsed: boolean;
     animationDisabled: boolean;
@@ -29,14 +29,6 @@ const Sidebar = (props: ISidebarProps) => (
         </OuterClick>
     </React.Fragment>
 );
-
-Sidebar.propTypes = {
-    children: PropTypes.node,
-    slim: PropTypes.bool,
-    collapsed: PropTypes.bool,
-    animationsDisabled: PropTypes.bool,
-    pageConfig: PropTypes.object
-};
 
 const cfgSidebar = withPageConfig(Sidebar);
 

@@ -8,7 +8,7 @@ import { LogoThemed } from '../components/Logo/LogoThemed';
 import { NavbarActivityFeed } from './NavbarActivityFeed';
 
 export const DefaultNavbar = () => (
-    <Navbar light expand="xs" fluid>
+    <Navbar light expand="xs">
         <Nav navbar>
             <NavItem className="mr-3">
                 <SidebarTrigger/>

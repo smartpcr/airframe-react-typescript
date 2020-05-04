@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import classNames from 'classnames';
 
 export interface ISidebarContentProps {
-    children: ReactElement;
+    children: ReactElement[];
     slim?: boolean;
     collapsed?: boolean;
     animationsDisabled?: boolean;

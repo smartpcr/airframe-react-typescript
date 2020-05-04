@@ -1,11 +1,18 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
 import { ILayoutProps } from './LayoutContent';
 
-const LayoutSidebar = (props: ILayoutProps) => {
+export interface ILayoutSidebarProps {
+    children: ReactNode;
+    sidebarSlim?: boolean;
+    sidebarCollapsed?: boolean;
+    layoutPartName: string;
+}
+
+const LayoutSidebar = (props: ILayoutSidebarProps) => {
     const sidebarClass = classNames("layout__sidebar", {
-        "layout__sidebar--slim": true,
-        "layout__sidebar--collapsed": true
+        "layout__sidebar--slim": props.sidebarSlim,
+        "layout__sidebar--collapsed": props.sidebarCollapsed
     });
 
     return (

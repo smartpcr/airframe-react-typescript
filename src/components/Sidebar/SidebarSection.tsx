@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export interface ISidebarSectionProps {
-    children: ReactElement;
+    children: ReactNode;
     fluid?: boolean;
     cover?: boolean;
     className?: string;

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
 
 export interface ISidebarHideSlimProps {
@@ -6,13 +6,11 @@ export interface ISidebarHideSlimProps {
 }
 
 export const SidebarHideSlim = (props: ISidebarHideSlimProps) => {
-    return React.Children.map(props.children, (child: ReactElement) =>
-        React.cloneElement(child, {
-            className: classNames(
-                child.props.className,
-                'sidebar__hide-slim'
-            )  
-        })
-    );
+    return React.cloneElement(props.children, {
+        className: classNames(
+            props.children.props.className,
+            'sidebar__hide-slim'
+        )  
+    });
 };
 
