@@ -1,6 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Media, Table, Badge, Card, CardBody, CardTitle, InputGroup, Input, InputGroupAddon, Button, ListGroup, ListGroupItem } from 'reactstrap';
+import {
+    Container,
+    Row,
+    Col,
+    Media,
+    Table,
+    Badge,
+    Card,
+    CardBody,
+    CardTitle,
+    InputGroup,
+    Input,
+    InputGroupAddon,
+    Button,
+    ListGroup,
+    ListGroupItem
+} from 'reactstrap';
 import { HeaderMain } from '../../components/HeaderMain';
 import faker from "faker/locale/en_US";
 

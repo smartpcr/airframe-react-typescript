@@ -34,11 +34,9 @@ export class SidebarContent extends React.Component<ISidebarContentProps, ISideb
             children,
         } = this.props;
 
-        const sidebarClass = classNames('sidebar', 'sidebar--animations-enabled', {
+        const sidebarClass = classNames('sidebar', {
             'sidebar--slim': slim || pageConfig.sidebarSlim,
             'sidebar--collapsed': collapsed || pageConfig.sidebarCollapsed,
-            'sidebar--animations-disabled': animationsDisabled || pageConfig.animationsDisabled,
-            'sidebar--animate-entry-complete': this.state.entryAnimationFinished,
         });
 
         return (

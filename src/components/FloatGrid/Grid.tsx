@@ -5,11 +5,11 @@ import './float-grid.scss';
 import { FloatGridContext } from './FloatGridContext';
 
 export interface IGridProps {
-    active: boolean;
+    active?: boolean;
     children: ReactElement[];
-    fluid: boolean;
-    rowHeight: number;
-    className: string;
+    fluid?: boolean;
+    rowHeight?: number;
+    className?: string;
 }
 
 export interface IGridState {
@@ -83,7 +83,7 @@ export class Grid extends React.Component<IGridProps, IGridState> {
                     gridUnitsToPx: (w: number, h: number) => {
                         return {
                             wPx: w / 12 * gridSize.w,
-                            hPx: h * rowHeight
+                            hPx: h * (rowHeight ?? 1)
                         }
                     },
                     active,

@@ -2,11 +2,9 @@ import React from 'react';
 import { SidebarHideSlim } from './SidebarHideSlim';
 import { SidebarSection } from './SidebarSection';
 import { SidebarShowSlim } from './SidebarShowSlim';
-import Button from 'reactstrap/lib/Button';
-import PopoverBody from 'reactstrap/lib/PopoverBody';
 import { FooterText } from '../footer/FooterText';
 import { FooterAuth } from '../footer/FooterAuth';
-import { UncontrolledPopover } from 'reactstrap';
+import { Button, PopoverBody, UncontrolledPopover } from 'reactstrap';
 
 
 const SidebarBottomA = () => (

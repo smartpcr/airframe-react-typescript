@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import faker from 'faker/locale/en_US';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import DropdownToggle from 'reactstrap/lib/DropdownToggle';
 import { IconWithBadge } from '../components/IconWithBadge/IconWithBadge';
-import Badge from 'reactstrap/lib/Badge';
 import { ExtendedDropdown } from '../components/ExtendedDropdown/ExtendedDropdown';
 import { ExtendedDropdownSection } from '../components/ExtendedDropdown/ExtendedDropdownSection';
-import ListGroup from 'reactstrap/lib/ListGroup';
-import ListGroupItem from 'reactstrap/lib/ListGroupItem';
-import Media from 'reactstrap/lib/Media';
-import { UncontrolledDropdown } from 'reactstrap/lib/Uncontrolled';
+import {
+    DropdownToggle,
+    Badge,
+    ListGroup,
+    ListGroupItem,
+    Media,
+    UncontrolledDropdown,
+} from 'reactstrap';
 
 /*eslint-disable */
 const activityFeedIcons = [

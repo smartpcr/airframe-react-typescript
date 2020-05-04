@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import { SidebarHideSlim } from './SidebarHideSlim';
 import { SidebarSection } from './SidebarSection';
 import { SidebarShowSlim } from './SidebarShowSlim';
-import DropdownToggle from 'reactstrap/lib/DropdownToggle';
-import DropdownMenu from 'reactstrap/lib/DropdownMenu';
-import DropdownItem from 'reactstrap/lib/DropdownItem';
 import { AvatarImage } from '../Avatar/AvatarImage';
 import { AvatarAddonIcon } from '../Avatar/AvatarAddonIcon';
-import { UncontrolledButtonDropdown } from 'reactstrap';
+import {
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledButtonDropdown
+} from 'reactstrap';
 
 const avatarImg = "../../assets/images/logos/logo-primary.svg";
 

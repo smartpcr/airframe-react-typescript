@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from 'reactstrap/lib/Navbar';
-import Nav from 'reactstrap/lib/Nav';
-import NavItem from 'reactstrap/lib/NavItem';
+import { Navbar, Nav, NavItem, } from 'reactstrap';
 import { SidebarTrigger } from '../components/Sidebar/SidebarTrigger';
 import { LogoThemed } from '../components/Logo/LogoThemed';
 import { NavbarActivityFeed } from './NavbarActivityFeed';

@@ -42,7 +42,8 @@
     "react-toastify": "^5.2.1",
     "react-toggle": "^4.0.2",
     "reactstrap": "^8.4.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "uuidv4": "^6.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

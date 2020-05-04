@@ -9,6 +9,7 @@ import { LogoThemed } from '../components/Logo/LogoThemed';
 import { SidebarMobileFluid } from '../components/Sidebar/SidebarMobileFluid';
 import { SidebarTopA } from '../components/Sidebar/SidebarTopA';
 import { SidebarBottomA } from '../components/Sidebar/SidebarBottomA';
+import { SidebarMiddleNav } from '../components/SidebarMenu/SidebarMiddleNav';
 
 export const DefaultSidebar = () => (
     <Sidebar>
@@ -36,7 +37,7 @@ export const DefaultSidebar = () => (
             
             <SidebarSection fluid cover>
                 { /* SIDEBAR: Menu */ }
-                
+                <SidebarMiddleNav />
             </SidebarSection>
 
             <SidebarBottomA />
