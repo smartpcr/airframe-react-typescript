@@ -4,25 +4,25 @@ import _ from 'lodash';
 import classNames from "classnames";
 import { Helmet } from 'react-helmet';
 import config from "../Config";
-import { ILayoutContentProps, ITargetType } from "./LayoutContent";
+import { ITargetType } from "./LayoutContent";
 import ReactDOM from "react-dom";
 import { ThemeClass } from "./theme/ThemeClass";
 import { PageConfigContext } from "./PageConfigContext";
 
-const findChildByType = (children: ILayoutContentProps[], targetType: ITargetType) => {
+const findChildByType = (children: ReactElement[], targetType: ITargetType) => {
     let result: ReactElement | undefined;
 
-    React.Children.forEach(children, (child) => {
-        if (child.layoutPartName === targetType.layoutPartName) {
-            result = child.children;
+    React.Children.forEach(children, (child: ReactElement) => {
+        if (child.props.layoutPartName === targetType.layoutPartName) {
+            result = child;
         }
     });
 
     return result;
 };
-const findChildrenByType = (children: ILayoutContentProps[], targetType: ITargetType) => {
-    return _.filter(React.Children.toArray(children), (child: ILayoutContentProps) =>
-        child.layoutPartName === targetType.layoutPartName);
+const findChildrenByType = (children: ReactElement[], targetType: ITargetType) => {
+    return _.filter(React.Children.toArray(children), (child: ReactElement) =>
+        child.props.layoutPartName === targetType.layoutPartName);
 };
 
 export interface IBreakpoint {
@@ -49,7 +49,7 @@ export interface IIcon {
 }
 
 export interface ILayoutProps {
-    children: ILayoutContentProps[];
+    children: ReactElement[];
     sidebarSlim: boolean;
     location: ILocation;
     favIcons: IIcon[];

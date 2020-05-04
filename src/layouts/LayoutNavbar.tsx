@@ -1,19 +1,14 @@
 import React, { ReactElement } from 'react';
-import { ILayoutContentProps } from './LayoutContent';
+import { ILayout, ILayoutProps } from './LayoutContent';
 
-export interface ILayoutNavbarProps {
-    children: ReactElement;
-    layoutPartName: string;
-}
-
-const LayoutNavbar = (props: ILayoutNavbarProps) => {
+const LayoutNavbar = (props: ILayoutProps) => {
     const navbar = React.Children.only(props.children);
 
     return (
         <div className="layout__navbar">
-        {
-            React.cloneElement(navbar, { fixed: null })
-        }
+            {
+                React.cloneElement(navbar, { fixed: null })
+            }
         </div>
     );
 };

@@ -1,22 +1,16 @@
 import React, { ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { ILayoutContentProps } from './LayoutContent';
+import { ILayoutProps } from './LayoutContent';
 
-export interface ILayoutSidebarProps {
-    children: ReactElement;
-    layoutPartName: string;
-}
-
-const LayoutSidebar = (props: ILayoutSidebarProps) => {
+const LayoutSidebar = (props: ILayoutProps) => {
     const sidebarClass = classNames("layout__sidebar", {
         "layout__sidebar--slim": true,
         "layout__sidebar--collapsed": true
     });
 
     return (
-        <div className={ sidebarClass }>
-            { props.children }
+        <div className={sidebarClass}>
+            {props.children}
         </div>
     );
 };
